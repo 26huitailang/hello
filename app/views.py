@@ -10,11 +10,11 @@ def index():
     posts = [  # fake array of posts
        {
            'author': {'nickname': 'John'},
-           'body': '今天三圣乡天气不错！'
+           'body': u'今天三圣乡白鹭湾天气不错！20160508！'
        },
         {
             'author': {'nickname': 'Spiderman'},
-            'body': 'I''m the fan of Captain America.'
+            'body': 'I\'m the fan of Captain America.'
         }
     ]
     return render_template('index.html',

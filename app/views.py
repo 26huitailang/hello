@@ -12,8 +12,9 @@ def load_user(id):
 
 @app.route('/')
 @app.route('/index')
+@login_required
 def index():
-    user = {'nickname': 'Peter'}  # fake user
+    user = g.user
     posts = [  # fake array of posts
        {
            'author': {'nickname': 'John'},
@@ -28,6 +29,10 @@ def index():
                             title='',
                             user=user,
                             posts=posts)
+
+@app.before_request
+def before_request():
+    g.user = current_user
 
 @app.route('/login', methods=['GET', 'POST'])
 @oid.loginhandler
@@ -44,7 +49,7 @@ def login():
                             providers=app.config['OPENID_PROVIDERS'])
 
 @oid.after_login
-def after_login(resp):
+def after_login(resp):  # The resp argument passed to the after_login function contains information returned by the OpenID provider.
     if resp.email is None or resp.email == "":
         flash('Invalid login. Please try again.')
         return redirect(url_for('login'))
@@ -62,3 +67,8 @@ def after_login(resp):
         session.pop('remember_me', None)
     login_user(user, remember = remember_me)
     return redirect(request.args.get('next') or url_for('index'))
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))

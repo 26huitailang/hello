@@ -10,8 +10,8 @@ if enable_search:
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     social_id = db.Column(db.String(64), nullable=False, unique=True)
-    nickname = db.Column(db.String(64), nullable=False, index=True, unique=True)
-    email = db.Column(db.String(120), nullable=False, index=True, unique=True)
+    nickname = db.Column(db.String(64), nullable=False)
+    email = db.Column(db.String(120), nullable=False)
     posts = db.relationship('Post', backref='author', lazy='dynamic')
 
     @property

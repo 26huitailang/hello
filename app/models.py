@@ -1,4 +1,10 @@
-from app import db
+from app import db, app
+from config import WHOOSH_ENABLED
+
+enable_search = WHOOSH_ENABLED
+if enable_search:
+    import flask.ext.whooshalchemy as whooshalchemy
+
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -35,3 +41,6 @@ class Post(db.Model):
 
     def __repr__(self):
         return '<Post %r>' % (self.body)
+
+if enable_search:
+    whooshalchemy.whoosh_index(app, Post)

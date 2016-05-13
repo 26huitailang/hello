@@ -31,7 +31,7 @@ def update_qq_api_request_data(data={}):
 @app.route('/')
 def index():
     '''just for verify website owner here.'''
-    return Markup('<meta property="qc:admins" content="54112610514114167605273510063757" />')
+    return redirect(url_for('get_user_info'))
 
 
 @app.route('/user_info')

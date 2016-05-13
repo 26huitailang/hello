@@ -6,7 +6,7 @@ import os
 from flask.ext.login import LoginManager
 from flask.ext.openid import OpenID
 from config import basedir, QQ_APP_ID, QQ_APP_SECRET
-from flask_oauth import OAuth
+from flask_oauthlib.client import OAuth
 
 app = Flask(__name__)
 app.config.from_object('config')  # read config and use it

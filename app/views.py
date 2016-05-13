@@ -1,12 +1,11 @@
-from flask import Flask, redirect, url_for, session, request
+from flask import Flask, redirect, url_for, session, request, render_template
 from flask_oauth import OAuth
 from config import QQ_APP_SECRET, QQ_APP_ID
 from app import qq, app
 
 @app.route('/')
 def index():
-    return redirect(url_for('login'))
-
+    return render_template('index.html')
 
 @app.route('/login')
 def login():

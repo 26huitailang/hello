@@ -40,7 +40,8 @@ def get_user_info():
     if 'qq_token' in session:
         data = update_qq_api_request_data()
         resp = qq.get('/user/get_user_info', data=data)
-        return resp.data.nickname
+        aaa = jsonify(status=resp.status, data=resp.data)
+        return aaa.data
     return redirect(url_for('login'))
 
 

@@ -15,16 +15,16 @@ lm = LoginManager()
 lm.init_app(app)
 lm.login_view = 'index'
 oid = OpenID(app, os.path.join(basedir, 'tmp'))
-oauth = OAuth()
+oauth = OAuth(app)
 
 qq = oauth.remote_app('qq',
-                      base_url='https://graph.qq.com/',
+                      base_url='https://graph.qq.com',
                       request_token_url=None,
                       consumer_key=QQ_APP_ID,
                       consumer_secret=QQ_APP_SECRET,
                       authorize_url='https://graph.qq.com/oauth2.0/authorize',
                       access_token_url='/oauth2.0/token',
-                      request_token_params={'scope': 'email'}
+                      request_token_params={'scope': 'get_user_info'}
 )
 
 if not app.debug and os.environ.get('HEROKU') is None:

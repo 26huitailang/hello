@@ -12,7 +12,7 @@ app.config.from_object('config')  # read config and use it
 db = SQLAlchemy(app)
 lm = LoginManager()
 lm.init_app(app)
-lm.login_view = 'login'
+lm.login_view = 'index'
 oid = OpenID(app, os.path.join(basedir, 'tmp'))
 
 if not app.debug and os.environ.get('HEROKU') is None:

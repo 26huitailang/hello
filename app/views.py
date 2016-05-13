@@ -29,9 +29,10 @@ def update_qq_api_request_data(data={}):
 
 
 @app.route('/')
+@app.route('/index')
 def index():
-    '''just for verify website owner here.'''
-    return redirect(url_for('get_user_info'))
+    '''Start page'''
+    return render_template('index.html')
 
 
 @app.route('/user_info')

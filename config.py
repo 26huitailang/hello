@@ -1,11 +1,14 @@
 WTF_CSRF_ENABLED = True
 SECRET_KEY = 'you-will-never-guess'
-OAUTH_CREDENTIALS = {
-    'qq': {
-        'id': '101312547',
-        'secret': 'cf44c012ba65f5417a298b2991a16bdb'
-    }
-}
+# OAUTH_CREDENTIALS = {
+#     'qq': {
+#         'id': '101312547',
+#         'secret': 'cf44c012ba65f5417a298b2991a16bdb'
+#     }
+# }
+
+QQ_APP_ID = '101312547'
+QQ_APP_SECRET = 'cf44c012ba65f5417a298b2991a16bdb'
 
 OPENID_PROVIDERS = [
     {'name': 'Google', 'url': 'https://www.google.com/accounts/o8/id'},

@@ -5,7 +5,8 @@ from flask.ext.login import login_user, logout_user, current_user, login_require
 from app import app, db, lm, oid
 from .forms import LoginForm
 from .models import User
-from oauth import OAuthSignIn
+# from oauth import OAuthSignIn
+from app import qq
 
 @lm.user_loader
 def load_user(id):
@@ -15,25 +16,49 @@ def load_user(id):
 @app.route('/index')
 # @login_required
 def index():
-    user = g.user
-    posts = [  # fake array of posts
-       {
-           'author': {'nickname': 'John'},
-           'body': u'今天三圣乡白鹭湾天气不错！20160508！'
-       },
-        {
-            'author': {'nickname': 'Spiderman'},
-            'body': 'I\'m the fan of Captain America.'
-        }
-    ]
-    return render_template('index.html',
-                            title='',
-                            user=user,
-                            posts=posts)
+    # user = g.user
+    # posts = [  # fake array of posts
+    #    {
+    #        'author': {'nickname': 'John'},
+    #        'body': u'今天三圣乡白鹭湾天气不错！20160508！'
+    #    },
+    #     {
+    #         'author': {'nickname': 'Spiderman'},
+    #         'body': 'I\'m the fan of Captain America.'
+    #     }
+    # ]
+    # return render_template('index.html',
+    #                         title='',
+    #                         user=user,
+    #                         posts=posts)
+    return redirect(url_for('login'))
 
 @app.before_request
 def before_request():
     g.user = current_user
+
+@app.route('/login')
+def login():
+    return qq.authorize(callback=url_for('qq_authorized',
+        next=request.args.get('next') or request.referrer or None,
+        _external=True))
+
+@app.route('/login/authorized')
+@qq.authorized_handler
+def qq_authorized(resp):
+    if resp is None:
+        return 'Access denied: reason=%s error=%s' % (
+            request.args['error_reason'],
+            request.args['error_description']
+        )
+    session['oauth_token'] = (resp['access_token'], '')
+    me = qq.get('/me')
+    return 'Logged in as id=%s name=%s redirect=%s' % \
+        (me.data['id'], me.data['name'], request.args.get('next'))
+
+@qq.tokengetter
+def get_facebook_oauth_token():
+    return session.get('oauth_token')
 
 # @app.route('/login', methods=['GET', 'POST'])
 # @oid.loginhandler
@@ -84,29 +109,29 @@ def user(nickname):
                             user=user,
                             posts=posts)
 
-@app.route('/authorize/<provider>')
-def oauth_authorize(provider):
-    if not current_user.is_anonymous:
-        return redirect(url_for('index'))
-    oauth = OAuthSignIn.get_provider(provider)
-    return oauth.authorize()
-
-@app.route('/callback/<provider>')
-def oauth_callback(provider):
-    if not current_user.is_anonymous():
-        return redirect(url_for('index'))
-    oauth = OAuthSignIn.get_provider(provider)
-    social_id, username, email = oauth.callback()
-    if social_id is None:
-        flash('Authentication failed.')
-        return redirect(url_for('index'))
-    user = User.query.filter_by(social_id=social_id).first()
-    if not user:
-        user = User(social_id=social_id, nickname=username, email=email)
-        db.session.add(user)
-        db.session.commit()
-    login_user(user, True)
-    return redirect(url_for('index'))
+# @app.route('/authorize/<provider>')
+# def oauth_authorize(provider):
+#     if not current_user.is_anonymous:
+#         return redirect(url_for('index'))
+#     oauth = OAuthSignIn.get_provider(provider)
+#     return oauth.authorize()
+#
+# @app.route('/callback/<provider>')
+# def oauth_callback(provider):
+#     if not current_user.is_anonymous():
+#         return redirect(url_for('index'))
+#     oauth = OAuthSignIn.get_provider(provider)
+#     social_id, username, email = oauth.callback()
+#     if social_id is None:
+#         flash('Authentication failed.')
+#         return redirect(url_for('index'))
+#     user = User.query.filter_by(social_id=social_id).first()
+#     if not user:
+#         user = User(social_id=social_id, nickname=username, email=email)
+#         db.session.add(user)
+#         db.session.commit()
+#     login_user(user, True)
+#     return redirect(url_for('index'))
 
 @app.route('/logout')
 def logout():

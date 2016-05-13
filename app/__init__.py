@@ -5,7 +5,8 @@ from flask.ext.sqlalchemy import SQLAlchemy
 import os
 from flask.ext.login import LoginManager
 from flask.ext.openid import OpenID
-from config import basedir
+from config import basedir, QQ_APP_ID, QQ_APP_SECRET
+from flask_oauth import OAuth
 
 app = Flask(__name__)
 app.config.from_object('config')  # read config and use it
@@ -14,6 +15,17 @@ lm = LoginManager()
 lm.init_app(app)
 lm.login_view = 'index'
 oid = OpenID(app, os.path.join(basedir, 'tmp'))
+oauth = OAuth()
+
+qq = oauth.remote_app('qq',
+                      base_url='https://graph.qq.com/',
+                      request_token_url=None,
+                      consumer_key=QQ_APP_ID,
+                      consumer_secret=QQ_APP_SECRET,
+                      authorize_url='https://graph.qq.com/oauth2.0/authorize',
+                      access_token_url='/oauth2.0/token',
+                      request_token_params={'scope': 'email'}
+)
 
 if not app.debug and os.environ.get('HEROKU') is None:
     import logging

@@ -22,7 +22,7 @@ def update_qq_api_request_data(data={}):
     defaults = {
         'openid': session.get('qq_openid'),
         'access_token': session.get('qq_token')[0],
-        'oauth_consumer_key': QQ_APP_ID,
+        'oauth_consumer_key': QQ_APP_ID
     }
     defaults.update(data)
     return defaults
@@ -40,7 +40,8 @@ def get_user_info():
     if 'qq_token' in session:
         data = update_qq_api_request_data()
         resp = qq.get('/user/get_user_info', data=data)
-        return jsonify(status=resp.status, data=resp.data)
+        aaa = jsonify(status=resp.status, data=resp.data)
+        return aaa
     return redirect(url_for('login'))
 
 

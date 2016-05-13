@@ -7,11 +7,12 @@ if enable_search:
     import flask.ext.whooshalchemy as whooshalchemy
 
 
-class User(UserMixin, db.Model):
+class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    social_id = db.Column(db.String(64), nullable=False, unique=True)
-    nickname = db.Column(db.String(64), nullable=False)
-    email = db.Column(db.String(120), nullable=False)
+    nickname = db.Column(db.String(64), unique=True)
+    email = db.Column(db.String(120), unique=True)
+    figure_1 = db.Column(db.String(120))
+    figure_2 = db.Column(db.String(120))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
 
     @property

@@ -1,80 +1,66 @@
-from flask import Flask, redirect, url_for, session, request, jsonify, Markup, render_template
-from flask_oauth import OAuth
-from config import QQ_APP_SECRET, QQ_APP_ID
-from app import qq, app
-import json
+from flask import (Flask, flash, request, redirect,
+    render_template, url_for, session)
+from flask.ext.sqlalchemy import SQLAlchemy
+from app import app, github
+from models import User
 
-def json_to_dict(x):
-    '''OAuthResponse class can't not parse the JSON data with content-type
-    text/html, so we need reload the JSON data manually'''
-    if x.find('callback') > -1:
-        pos_lb = x.find('{')
-        pos_rb = x.find('}')
-        x = x[pos_lb:pos_rb + 1]
-    try:
-        return json.loads(x, encoding='utf-8')
-    except:
-        return x
+from rauth.service import OAuth2Service
 
 
-def update_qq_api_request_data(data={}):
-    '''Update some required parameters for OAuth2.0 API calls'''
-    defaults = {
-        'openid': session.get('qq_openid'),
-        'access_token': session.get('qq_token')[0],
-        'oauth_consumer_key': QQ_APP_ID
-    }
-    defaults.update(data)
-    return defaults
-
-
+# views
 @app.route('/')
 @app.route('/index')
 def index():
-    '''Start page'''
-    return render_template('index.html')
+    return render_template('login.html')
 
 
-@app.route('/user_info')
-def get_user_info():
-    if 'qq_token' in session:
-        data = update_qq_api_request_data()
-        resp = qq.get('/user/get_user_info', data=data)
-        aaa = jsonify(status=resp.status, data=resp.data)
-        return aaa.data
-    return redirect(url_for('login'))
-
-
+@app.route('/about')
+def about():
+    if 'token' in session.keys():
+        auth = github.get_session(token=session['token'])
+        resp = auth.get('/user')
+        if resp.status_code == 200:
+            user = resp.json()
+        return render_template('about.html', user=user)
+    else:
+        return redirect(url_for('login'))
+ 
+ 
 @app.route('/login')
 def login():
-    return qq.authorize(callback=url_for('authorized', _external=True))
+    redirect_uri = url_for('authorized', next=request.args.get('next') or
+        request.referrer or None, _external=True)
+    print(redirect_uri)
+    # More scopes http://developer.github.com/v3/oauth/#scopes
+    params = {'redirect_uri': redirect_uri, 'scope': 'user'}
+    print(github.get_authorize_url(**params))
+    return redirect(github.get_authorize_url(**params))
 
 
-@app.route('/logout')
-def logout():
-    session.pop('qq_token', None)
-    return redirect(url_for('get_user_info'))
-
-
-@app.route('/login/authorized')
+# same path as on application settings page
+@app.route('/github/callback')
 def authorized():
-    resp = qq.authorized_response()
-    if resp is None:
-        return 'Access denied: reason=%s error=%s' % (
-            request.args['error_reason'],
-            request.args['error_description']
-        )
-    session['qq_token'] = (resp['access_token'], '')
+    # check to make sure the user authorized the request
+    if not 'code' in request.args:
+        flash('You did not authorize the request')
+        return redirect(url_for('index'))
+ 
+    # make a request for the access token credentials using code
+    redirect_uri = url_for('authorized', _external=True)
+ 
+    data = dict(code=request.args['code'],
+                redirect_uri=redirect_uri,
+                scope='user')
 
-    # Get openid via access_token, openid and access_token are needed for API calls
-    resp = qq.get('/oauth2.0/me', {'access_token': session['qq_token'][0]})
-    resp = json_to_dict(resp.data)
-    if isinstance(resp, dict):
-        session['qq_openid'] = resp.get('openid')
-
-    return redirect(url_for('get_user_info'))
-
-
-@qq.tokengetter
-def get_qq_oauth_token():
-    return session.get('qq_token')
+    auth = github.get_auth_session(data=data)
+ 
+    # the "me" response
+    me = auth.get('user').json()
+ 
+    user = User.get_or_create(me['login'], me['name'])
+ 
+    session['token'] = auth.access_token
+    session['user_id'] = user.id
+ 
+    flash(me['name'])
+    return redirect(url_for('about'))

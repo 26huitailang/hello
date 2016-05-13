@@ -6,35 +6,27 @@ enable_search = WHOOSH_ENABLED
 if enable_search:
     import flask.ext.whooshalchemy as whooshalchemy
 
-
+# models
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nickname = db.Column(db.String(64), unique=True)
-    email = db.Column(db.String(120), unique=True)
-    figure_1 = db.Column(db.String(120))
-    figure_2 = db.Column(db.String(120))
-    posts = db.relationship('Post', backref='author', lazy='dynamic')
+    login = db.Column(db.String(80), unique=True)
+    git_id = db.Column(db.String(120))
 
-    @property
-    def is_authenticated(self):
-        return True
-
-    @property
-    def is_active(self):
-        return True
-
-    @property
-    def is_anonymous(self):
-        return False
-
-    def get_id(self):
-        try:
-            return unicode(self.id)  # python 2
-        except NameError:
-            return str(self.id)  # python 3
+    def __init__(self, login, git_id):
+        self.login = login
+        self.git_id = git_id
 
     def __repr__(self):
-        return '<User %r>' % (self.nickname)
+        return '<User %r>' % self.login
+
+    @staticmethod
+    def get_or_create(login, git_id):
+        user = User.query.filter_by(login=login).first()
+        if user is None:
+            user = User(login, git_id)
+            db.session.add(user)
+            db.session.commit()
+        return user
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)

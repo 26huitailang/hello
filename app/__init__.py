@@ -7,13 +7,14 @@ from flask.ext.login import LoginManager
 from flask.ext.openid import OpenID
 from config import basedir, QQ_APP_ID, QQ_APP_SECRET
 from flask_oauthlib.client import OAuth
+from rauth.service import OAuth2Service
 
 app = Flask(__name__)
 app.config.from_object('config')  # read config and use it
 db = SQLAlchemy(app)
-lm = LoginManager()
-lm.init_app(app)
-lm.login_view = 'index'
+# lm = LoginManager()
+# lm.init_app(app)
+# lm.login_view = 'index'
 oid = OpenID(app, os.path.join(basedir, 'tmp'))
 oauth = OAuth(app)
 
@@ -25,6 +26,15 @@ qq = oauth.remote_app('qq',
                       authorize_url='https://graph.qq.com/oauth2.0/authorize',
                       access_token_url='/oauth2.0/token',
                       request_token_params={'scope': 'get_user_info'}
+)
+
+github = OAuth2Service(
+    name='github',
+    base_url='https://api.github.com/',
+    access_token_url='https://github.com/login/oauth/access_token',
+    authorize_url='https://github.com/login/oauth/authorize',
+    client_id= '79306c2506b9926d70a9',
+    client_secret= 'e5e3ca1ab4106e1defad32f098aa7ccae931ae92',
 )
 
 if not app.debug and os.environ.get('HEROKU') is None:

@@ -1,11 +1,7 @@
-from flask import (Flask, flash, request, redirect,
-    render_template, url_for, session)
+from flask import (Flask, flash, request, redirect, render_template, url_for, session)
 from flask.ext.sqlalchemy import SQLAlchemy
 from app import app, github
 from models import User
-
-from rauth.service import OAuth2Service
-
 
 # views
 @app.route('/')

@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta property="qc:admins" content="54112610514114167605273510063757" />
     {% if title %}
-    <title>{{ title }} - microblog</title>
+    <title>{{ title }} - Bazinga</title>
     {% else %}
     <title>Bazinga</title>
     {% endif %}
 </head>
 <body>
-    <div>Bazinga</div>
+    <div>Bazinga:
+        | <a href="{{ url_for('index') }}">首页</a>
+        | <a href="{{ url_for('about') }}">关于我</a>
+        {% if g.user.is_authenticated %}
+        | <a href="{{ url_for('logout') }}">退出</a>
+        {% endif %}
+    </div>
     {% block content %}{% endblock %}
 </body>
 </html>

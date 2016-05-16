@@ -6,27 +6,25 @@ import os
 from flask.ext.login import LoginManager
 from flask.ext.openid import OpenID
 from config import basedir, QQ_APP_ID, QQ_APP_SECRET
-from flask_oauthlib.client import OAuth
 from rauth.service import OAuth2Service
 
 app = Flask(__name__)
 app.config.from_object('config')  # read config and use it
 db = SQLAlchemy(app)
-# lm = LoginManager()
-# lm.init_app(app)
-# lm.login_view = 'index'
-oid = OpenID(app, os.path.join(basedir, 'tmp'))
-oauth = OAuth(app)
+lm = LoginManager()
+lm.init_app(app)
+lm.login_view = 'loginpage'
+# oid = OpenID(app, os.path.join(basedir, 'tmp'))
 
-qq = oauth.remote_app('qq',
-                      base_url='https://graph.qq.com',
-                      request_token_url=None,
-                      consumer_key=QQ_APP_ID,
-                      consumer_secret=QQ_APP_SECRET,
-                      authorize_url='https://graph.qq.com/oauth2.0/authorize',
-                      access_token_url='/oauth2.0/token',
-                      request_token_params={'scope': 'get_user_info'}
-)
+# qq = oauth.remote_app('qq',
+#                       base_url='https://graph.qq.com',
+#                       request_token_url=None,
+#                       consumer_key=QQ_APP_ID,
+#                       consumer_secret=QQ_APP_SECRET,
+#                       authorize_url='https://graph.qq.com/oauth2.0/authorize',
+#                       access_token_url='/oauth2.0/token',
+#                       request_token_params={'scope': 'get_user_info'}
+# )
 
 github = OAuth2Service(
     name='github',

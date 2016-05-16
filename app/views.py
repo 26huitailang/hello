@@ -1,16 +1,29 @@
-from flask import (Flask, flash, request, redirect, render_template, url_for, session)
+from flask import Flask, flash, request, redirect, render_template, url_for, session, g
 from flask.ext.sqlalchemy import SQLAlchemy
-from app import app, github
+from flask.ext.login import login_required, logout_user, current_user
+from app import app, github, lm
 from models import User
 
-# views
+@lm.user_loader
+def load_user(id):
+    return User.query.get(int(id))
+
+@app.before_request
+def before_request():
+    g.user = current_user
+
 @app.route('/')
 @app.route('/index')
+@login_required
 def index():
+    return render_template('index.html')
+
+@app.route('/loginpage')
+def loginpage():
     return render_template('login.html')
 
-
 @app.route('/about')
+@login_required
 def about():
     if 'token' in session.keys():
         auth = github.get_session(token=session['token'])
@@ -53,10 +66,15 @@ def authorized():
     # the "me" response
     me = auth.get('user').json()
  
-    user = User.get_or_create(me['login'], me['name'])
+    user = User.get_or_create(me['login'], me['name'], me['email'])
  
     session['token'] = auth.access_token
     session['user_id'] = user.id
  
     flash(me['name'])
-    return redirect(url_for('about'))
+    return redirect(url_for('index'))
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))

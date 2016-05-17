@@ -2,11 +2,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>User: {{ user.nickname }}!</h1>
+{#    Welcome <span>{{ user.nickname }}</span><img src="{{ user.avatar_url }}" height="100" width="100">#}
+    <table>
+        <tr valign="top">
+            <td><img src="{{ user.avatar_url }}" width="128" height="128"></td>
+            <td>
+                <h1>User: {{ user.nickname }}</h1>
+                {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+                {% if user.last_seen %}<p><i>最后一次访问：{{ user.last_seen }}</i></p>{% endif %}
+                {% if user.id == g.user.id %}<p><a href="{{ url_for('edit') }}">编辑</a></p>{% endif %}
+            </td>
+        </tr>
+    </table>
     <hr>
     {% for post in posts %}
-    <p>
-        {{ post.author.nickname }} says: <b>{{ post.body }}</b>
-    </p>
+        {% include 'post.html' %}
     {% endfor %}
+    <a href ="{{ url_for('index') }}">Main page</a>
 {% endblock %}

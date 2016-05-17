@@ -18,6 +18,8 @@ OPENID_PROVIDERS = [
     {'name': 'MyOpenID', 'url':'http://huitailang.openid.org.cn/'}
 ]
 
+ADMIN_ACCOUNT = ['26huitailang']
+
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 

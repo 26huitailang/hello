@@ -3,5 +3,7 @@
 {% block content %}
     <h1>Welcom, {{ g.user.nickname }}</h1>
     <p>Your email is {{ g.user.email }}.</p>
-    <h2><a href="{{ url_for('about') }}">About Me</a></h2> If you are not logged in then you will be redirected to login page.
+    {% for post in posts %}
+    <div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
 {% endblock %}

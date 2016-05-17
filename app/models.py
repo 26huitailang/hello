@@ -1,5 +1,5 @@
 from app import db, app
-from config import WHOOSH_ENABLED
+from config import WHOOSH_ENABLED, ADMIN_ACCOUNT
 from flask.ext.login import UserMixin
 
 enable_search = WHOOSH_ENABLED
@@ -10,14 +10,18 @@ if enable_search:
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     login = db.Column(db.String(64), index=True, unique=True)
-    nickname = db.Column(db.String(64), index=True)
+    nickname = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
+    avatar_url = db.Column(db.String(120))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
+    about_me = db.Column(db.String(140))
+    last_seen = db.Column(db.DateTime)
 
-    def __init__(self, login, nickname, email):
+    def __init__(self, login, nickname, email, avatar_url):
         self.login = login
         self.nickname = nickname
         self.email = email
+        self.avatar_url = avatar_url
 
     @property
     def is_authenticated(self):
@@ -41,13 +45,14 @@ class User(db.Model):
         return '<User %r>' % self.login
 
     @staticmethod
-    def get_or_create(login, nickname, email):
+    def get_or_create(login, nickname, email, avatar_url):
         user = User.query.filter_by(login=login).first()
         if user is None:
-            user = User(login, nickname, email)
+            user = User(login, nickname, email, avatar_url)
             db.session.add(user)
             db.session.commit()
         return user
+
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)

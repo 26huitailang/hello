@@ -13,7 +13,7 @@ app.config.from_object('config')  # read config and use it
 db = SQLAlchemy(app)
 lm = LoginManager()
 lm.init_app(app)
-lm.login_view = 'loginpage'
+lm.login_view = 'login_page'
 # oid = OpenID(app, os.path.join(basedir, 'tmp'))
 
 # qq = oauth.remote_app('qq',

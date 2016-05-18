@@ -20,6 +20,19 @@ OPENID_PROVIDERS = [
 
 ADMIN_ACCOUNT = ['26huitailang']
 
+
+
+# mail server settings
+MAIL_SERVER = 'smtp.qq.com'
+MAIL_PORT = 465
+# MAIL_USE_TLS = True
+MAIL_USE_SSL = True
+MAIL_USERNAME = '50590960'
+MAIL_PASSWORD = 'gsuzrbmkxhvybiac' # qq: gsuzrbmkxhvybiac csj123456
+
+#administrator list
+ADMINS = ['50590960@qq.com', 'chensijian199182@163.com', '26huitailang@gmail.com']
+
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -37,3 +50,6 @@ WHOOSH_ENABLED = os.environ.get('HEROKU') is None
 
 # slow database query threshold (in seconds)
 DATABASE_QUERY_TIMEOUT = 0.5
+
+# pagination
+POSTS_PER_PAGE = 5

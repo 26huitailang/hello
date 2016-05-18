@@ -2,10 +2,11 @@ from flask import Flask, flash, request, redirect, render_template, url_for, ses
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import login_required, logout_user, current_user
 from app import app, github, lm, db
-from models import User
-from config import ADMIN_ACCOUNT
+from models import User, Post
+from config import ADMIN_ACCOUNT, POSTS_PER_PAGE
 from datetime import datetime
-from forms import EditForm
+from forms import EditForm, PostForm
+
 
 @lm.user_loader
 def load_user(id):
@@ -20,24 +21,34 @@ def before_request():
         db.session.add(g.user)
         db.session.commit()
 
-@app.route('/')
-@app.route('/index')
+
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
+
+
+@app.errorhandler(500)
+def not_found_error(error):
+    db.session.rollback()
+    return render_template('500.html'), 500
+
+
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
+@app.route('/index/<int:page>', methods=['GET', 'POST'])
 @login_required
-def index():
-    user = g.user
-    posts = [  # fake array of posts
-        {
-            'author': {'nickname': 'John'},
-            'body': 'Beautiful day in Portland!'
-        },
-        {
-            'author': {'nickname': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
-        }
-    ]
+def index(page=1):
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(body=form.post.data, timestamp=datetime.utcnow(), author=g.user)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post is now live!')
+        return redirect(url_for('index'))
+    posts = g.user.posts.paginate(page, POSTS_PER_PAGE, False)
     return render_template('index.html',
                            title='Home',
-                           user=user,
+                           form=form,
                            posts=posts)
 
 
@@ -119,12 +130,13 @@ def authorized():
     if me['login'] not in  ADMIN_ACCOUNT:
         return redirect(url_for('index'))
 
+    # db.session.commit()
     user = User.get_or_create(me['login'], me['name'], me['email'], me['avatar_url'])
  
     session['token'] = auth.access_token
     session['user_id'] = user.id
  
-    flash('Login in successful. nickname=%r, avatar_url=%r' % (me['name'], me['avatar_url']))
+    # flash('Login in successful. nickname=%r, avatar_url=%r' % (me['name'], me['avatar_url']))
     return redirect(url_for('index'))
 
 

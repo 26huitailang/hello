@@ -20,8 +20,6 @@ OPENID_PROVIDERS = [
 
 ADMIN_ACCOUNT = ['26huitailang']
 
-
-
 # mail server settings
 MAIL_SERVER = 'smtp.qq.com'
 MAIL_PORT = 465

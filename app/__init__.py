@@ -4,6 +4,7 @@ from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 import os
 from flask.ext.login import LoginManager
+from flask.ext.mail import Mail
 from flask.ext.openid import OpenID
 from config import basedir, ADMINS, MAIL_SERVER, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD
 from rauth.service import OAuth2Service
@@ -14,6 +15,7 @@ db = SQLAlchemy(app)
 lm = LoginManager()
 lm.init_app(app)
 lm.login_view = 'login_page'
+mail = Mail(app)
 # oid = OpenID(app, os.path.join(basedir, 'tmp'))
 
 # qq = oauth.remote_app('qq',

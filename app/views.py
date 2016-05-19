@@ -6,6 +6,7 @@ from models import User, Post
 from config import ADMIN_ACCOUNT, POSTS_PER_PAGE
 from datetime import datetime
 from forms import EditForm, PostForm
+from .emails import post_notification
 
 
 @lm.user_loader
@@ -20,6 +21,13 @@ def before_request():
         g.user.last_seen = datetime.utcnow()
         db.session.add(g.user)
         db.session.commit()
+    if 'user_id' in session:
+        if session['user_id']:
+            user = User.query.get(session['user_id'])
+            if user:
+                g.user = user
+            else:
+                del session['user_id']
 
 
 @app.errorhandler(404)
@@ -44,12 +52,27 @@ def index(page=1):
         db.session.add(post)
         db.session.commit()
         flash('Your post is now live!')
+        post_notification(post, g.user)
         return redirect(url_for('index'))
     posts = g.user.posts.paginate(page, POSTS_PER_PAGE, False)
     return render_template('index.html',
                            title='Home',
                            form=form,
                            posts=posts)
+
+
+@app.route('/data')
+def data():
+    # if 'token' in session.keys():
+    if session.has_key('token'):
+        auth = github.get_session(token=session['token'])
+        user_json = auth.get('/gists').json()
+        return render_template('data.html',
+                               user_json=user_json)
+        # if resp.status_code == 200:
+        #     user_json = resp.json()
+        #     return render_template('data.html',
+        #                            user_json=user_json)
 
 
 @app.route('/login_page')
@@ -60,11 +83,6 @@ def login_page():
 @app.route('/user/<nickname>')
 @login_required
 def user(nickname):
-    # if 'token' in session.keys():
-    #     auth = github.get_session(token=session['token'])
-    #     resp = auth.get('/user')
-    #     if resp.status_code == 200:
-    #         user_j = resp.json()
     user = User.query.filter_by(nickname=nickname).first()
     if user is None:
         flash('User %s not found.' % nickname)
@@ -102,7 +120,7 @@ def login():
                           request.referrer or None, _external=True)
     # print(redirect_uri)
     # More scopes http://developer.github.com/v3/oauth/#scopes
-    params = {'redirect_uri': redirect_uri, 'scope': 'user'}
+    params = {'redirect_uri': redirect_uri, 'scope': 'user, gist'}
     # print(github.get_authorize_url(**params))
     return redirect(github.get_authorize_url(**params))
 
@@ -120,7 +138,7 @@ def authorized():
  
     data = dict(code=request.args['code'],
                 redirect_uri=redirect_uri,
-                scope='user')
+                scope='user, gist')
 
     auth = github.get_auth_session(data=data)
  

@@ -2,14 +2,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-{#    Welcome <span>{{ user.nickname }}</span><img src="{{ user.avatar_url }}" height="100" width="100">#}
     <table>
         <tr valign="top">
             <td><img src="{{ user.avatar_url }}" width="128" height="128"></td>
             <td>
                 <h1>User: {{ user.nickname }}</h1>
                 {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
-                {% if user.last_seen %}<p><i>最后一次访问：{{ user.last_seen }}</i></p>{% endif %}
+                {% if user.last_seen %}<p><em>最后一次访问：{{ momentjs(user.last_seen).calendar() }}</em></p>{% endif %}
                 {% if user.id == g.user.id %}<p><a href="{{ url_for('edit') }}">编辑</a></p>{% endif %}
             </td>
         </tr>
@@ -18,5 +17,16 @@
     {% for post in posts %}
         {% include 'post.html' %}
     {% endfor %}
-    <a href ="{{ url_for('index') }}">Main page</a>
+    <ul class="pager">
+        {% if posts.has_prev %}
+        <li class="previous"><a href="{{ url_for('user', nickname=user.nickname, page=posts.prev_num) }}">Newer posts</a></li>
+        {% else %}
+        <li class="previous disabled"><a href="#">Newer posts</a></li>
+        {% endif %}
+        {% if posts.has_next %}
+        <li class="next"><a href="{{ url_for('user', nickname=user.nickname, page=posts.next_num) }}">Older posts</a></li>
+        {% else %}
+        <li class="next disabled"><a href="#">Older posts</a></li>
+        {% endif %}
+    </ul>
 {% endblock %}

@@ -51,7 +51,7 @@ def index(page=1):
         post = Post(body=form.post.data, timestamp=datetime.utcnow(), author=g.user)
         db.session.add(post)
         db.session.commit()
-        flash('Your post is now live!')
+        # flash('Your post is now live!')
         post_notification(post, g.user)
         return redirect(url_for('index'))
     posts = g.user.posts.paginate(page, POSTS_PER_PAGE, False)

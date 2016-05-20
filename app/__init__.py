@@ -8,6 +8,7 @@ from flask.ext.mail import Mail
 from flask.ext.openid import OpenID
 from config import basedir, ADMINS, MAIL_SERVER, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD
 from rauth.service import OAuth2Service
+from .momentjs import momentjs
 
 app = Flask(__name__)
 app.config.from_object('config')  # read config and use it
@@ -16,6 +17,7 @@ lm = LoginManager()
 lm.init_app(app)
 lm.login_view = 'login_page'
 mail = Mail(app)
+app.jinja_env.globals['momentjs'] = momentjs
 # oid = OpenID(app, os.path.join(basedir, 'tmp'))
 
 # qq = oauth.remote_app('qq',

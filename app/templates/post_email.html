@@ -1,0 +1,9 @@
+<p>Dear {{ user.nickname }},</p>
+<p><a href="{{ url_for('user', nickname=post.author.nickname, _external=True) }}">{{ post.author.nickname }}</a> posts a new message.</p>
+<table>
+    <tr valign="top">
+        <td><img src="{{ post.author.avatar_url }}" width="50" height="50"></td><td><i>{{ post.author.nickname }} says:</i><br>{{ post.body }}</td>
+    </tr>
+</table>
+<p>Regards,</p>
+<p>The <code>Bazinga</code> admin</p>

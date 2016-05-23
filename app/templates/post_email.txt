@@ -1,0 +1,12 @@
+Dear {{ user.nickname }},
+
+{{ post.author.nickname }} posts a new message:
+{{ post.body }}
+
+Click on the following link to visit {{ post.author.nickname }}'s profile page:
+
+{{ url_for('user', nickname=post.author.nickname, _external=True) }}
+
+Regards,
+
+The Bazinga admin

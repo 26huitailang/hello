@@ -25,6 +25,7 @@
     {% for post in posts.items %}
         {% include 'post.html' %}
     {% endfor %}
+    <hr>
     <ul class="pager">
         {% if posts.has_prev %}
         <li calss="previous"><a href="{{ url_for('index', page=posts.prev_num) }}"> Newer posts</a></li>

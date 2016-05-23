@@ -49,7 +49,7 @@ def index(page=1):
         post = Post(body=form.post.data, timestamp=datetime.utcnow(), author=g.user)
         db.session.add(post)
         db.session.commit()
-        # flash('Your post is now live!')
+        flash('Your post is now live!')
         post_notification(post, g.user)
         return redirect(url_for('index'))
     posts = g.user.posts.paginate(page, POSTS_PER_PAGE, False)
@@ -79,17 +79,14 @@ def login_page():
 
 
 @app.route('/user/<nickname>')
+@app.route('/user/<nickname>/<int:page>')
 @login_required
-def user(nickname):
+def user(nickname, page=1):
     user = User.query.filter_by(nickname=nickname).first()
     if user is None:
         flash('User %s not found.' % nickname)
         return redirect(url_for('login'))
-    posts = [
-        {'author': user, 'body': 'Test post 1111'},
-        {'author': user, 'body': 'Test post 2222'}
-    ]
-    # print user.avatar_url
+    posts = g.user.posts.paginate(page, POSTS_PER_PAGE, False)
     return render_template('user.html',
                            user=user,
                            posts=posts)
@@ -128,7 +125,7 @@ def login():
 def authorized():
     # check to make sure the user authorized the request
     if not 'code' in request.args:
-        flash('You did not authorize the request')
+        # flash('You did not authorize the request')
         return redirect(url_for('index'))
  
     # make a request for the access token credentials using code

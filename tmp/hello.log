@@ -1418,3 +1418,355 @@ Traceback (most recent call last):
     <p><a href="{{ url_for('user', nickname=post.author.nickname) }}">{{ post.author.nickname }}</a> said on {{ moment(post.timestamp).fromNow() }}:</p>
 UndefinedError: 'moment' is undefined
 2016-05-23 11:27:34,908 INFO: hello startup [in D:\hello\app\__init__.py:98]
+2016-05-23 13:16:22,562 INFO: hello startup [in D:\hello\app\__init__.py:99]
+2016-05-23 13:16:28,898 INFO: hello startup [in D:\hello\app\__init__.py:99]
+2016-05-23 13:18:27,648 INFO: hello startup [in D:\hello\app\__init__.py:99]
+2016-05-23 13:19:19,403 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 95, in user
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 55, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 18, in block "content"
+    {% include 'post.html' %}
+  File "D:\hello\app\templates\post.html", line 5, in top-level template code
+    <p><a href="{{ url_for('user', nickname=post.author.nickname) }}">{{ post.author.nickname }}</a> said on {{ momentjs(post.timestamp).fromNow() }}:</p>
+  File "D:\hello\app\momentjs.py", line 17, in fromNow
+    return self.render("fromNow()")
+  File "D:\hello\app\momentjs.py", line 8, in render
+    return Markup("<script>\ndocument.write(moment(\"%s\").%s);\n</script>" % (self.timestamp.strftime("%Y-%m-%dT%H:%M:%S Z"), format))
+UndefinedError: 'dict object' has no attribute 'timestamp'
+2016-05-23 13:26:47,289 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 95, in user
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 55, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 18, in block "content"
+    {% include 'post.html' %}
+  File "D:\hello\app\templates\post.html", line 5, in top-level template code
+    <p><a href="{{ url_for('user', nickname=post.author.nickname) }}">{{ post.author.nickname }}</a> said on {{ momentjs(post.timestamp).fromNow() }}:</p>
+  File "D:\hello\app\momentjs.py", line 17, in fromNow
+    return self.render("fromNow()")
+  File "D:\hello\app\momentjs.py", line 8, in render
+    return Markup("<script>\ndocument.write(moment(\"%s\").%s);\n</script>" % (self.timestamp.strftime("%Y-%m-%dT%H:%M:%S Z"), format))
+UndefinedError: 'dict object' has no attribute 'timestamp'
+2016-05-23 13:26:56,819 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 95, in user
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 55, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 18, in block "content"
+    {% include 'post.html' %}
+  File "D:\hello\app\templates\post.html", line 5, in top-level template code
+    <p><a href="{{ url_for('user', nickname=post.author.nickname) }}">{{ post.author.nickname }}</a> said on {{ momentjs(post.timestamp).fromNow() }}:</p>
+  File "D:\hello\app\momentjs.py", line 17, in fromNow
+    return self.render("fromNow()")
+  File "D:\hello\app\momentjs.py", line 8, in render
+    return Markup("<script>\ndocument.write(moment(\"%s\").%s);\n</script>" % (self.timestamp.strftime("%Y-%m-%dT%H:%M:%S Z"), format))
+UndefinedError: 'dict object' has no attribute 'timestamp'
+2016-05-23 13:44:24,184 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 95, in user
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 55, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 18, in block "content"
+    {% include 'post.html' %}
+  File "D:\hello\app\templates\post.html", line 5, in top-level template code
+    <p><a href="{{ url_for('user', nickname=post.author.nickname) }}">{{ post.author.nickname }}</a> said on {{ momentjs(post.timestamp).fromNow() }}:</p>
+  File "D:\hello\app\momentjs.py", line 17, in fromNow
+    return self.render("fromNow()")
+  File "D:\hello\app\momentjs.py", line 8, in render
+    return Markup("<script>\ndocument.write(moment(\"%s\").%s);\n</script>" % (self.timestamp.strftime("%Y-%m-%dT%H:%M:%S Z"), format))
+UndefinedError: 'dict object' has no attribute 'timestamp'
+2016-05-23 13:44:33,266 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 95, in user
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 55, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 18, in block "content"
+    {% include 'post.html' %}
+  File "D:\hello\app\templates\post.html", line 5, in top-level template code
+    <p><a href="{{ url_for('user', nickname=post.author.nickname) }}">{{ post.author.nickname }}</a> said on {{ momentjs(post.timestamp).fromNow() }}:</p>
+  File "D:\hello\app\momentjs.py", line 17, in fromNow
+    return self.render("fromNow()")
+  File "D:\hello\app\momentjs.py", line 8, in render
+    return Markup("<script>\ndocument.write(moment(\"%s\").%s);\n</script>" % (self.timestamp.strftime("%Y-%m-%dT%H:%M:%S Z"), format))
+UndefinedError: 'dict object' has no attribute 'timestamp'
+2016-05-23 13:46:50,658 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 95, in user
+    @app.route('/edit', methods=['GET', 'POST'])
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 55, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 18, in block "content"
+    {% include 'post.html' %}
+  File "D:\hello\app\templates\post.html", line 5, in top-level template code
+    <p><a href="{{ url_for('user', nickname=post.author.nickname) }}">{{ post.author.nickname }}</a> said on {{ momentjs(post.timestamp).fromNow() }}:</p>
+  File "D:\hello\app\momentjs.py", line 17, in fromNow
+    return self.render("fromNow()")
+  File "D:\hello\app\momentjs.py", line 8, in render
+    return Markup("<script>\ndocument.write(moment(\"%s\").%s);\n</script>" % (self.timestamp.strftime("%Y-%m-%dT%H:%M:%S Z"), format))
+UndefinedError: 'dict object' has no attribute 'timestamp'
+2016-05-23 13:47:06,946 INFO: hello startup [in D:\hello\app\__init__.py:99]
+2016-05-23 13:51:36,073 INFO: hello startup [in D:\hello\app\__init__.py:99]
+2016-05-23 13:51:46,563 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 93, in user
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 55, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 17, in block "content"
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2016-05-23 13:51:52,089 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 93, in user
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 55, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 17, in block "content"
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2016-05-23 13:51:59,865 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 93, in user
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 55, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 17, in block "content"
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2016-05-23 13:57:37,427 INFO: hello startup [in D:\hello\app\__init__.py:99]
+2016-05-23 13:58:01,210 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 92, in user
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 55, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 17, in block "content"
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable

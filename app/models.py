@@ -1,5 +1,5 @@
 from app import db, app
-from config import WHOOSH_ENABLED
+from config import WHOOSH_ENABLED, ADMIN_ACCOUNT
 from flask.ext.login import UserMixin
 
 enable_search = WHOOSH_ENABLED
@@ -9,24 +9,50 @@ if enable_search:
 # models
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    login = db.Column(db.String(80), unique=True)
-    git_id = db.Column(db.String(120))
+    login = db.Column(db.String(64), index=True, unique=True)
+    nickname = db.Column(db.String(64), index=True, unique=True)
+    email = db.Column(db.String(120), index=True, unique=True)
+    avatar_url = db.Column(db.String(120))
+    posts = db.relationship('Post', backref='author', lazy='dynamic')
+    about_me = db.Column(db.String(140))
+    last_seen = db.Column(db.DateTime)
 
-    def __init__(self, login, git_id):
+    def __init__(self, login, nickname, email, avatar_url):
         self.login = login
-        self.git_id = git_id
+        self.nickname = nickname
+        self.email = email
+        self.avatar_url = avatar_url
+
+    @property
+    def is_authenticated(self):
+        return True
+
+    @property
+    def is_active(self):
+        return True
+
+    @property
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        try:
+            return unicode(self.id)  # python 2
+        except NameError:
+            return str(self.id)  # python 3
 
     def __repr__(self):
         return '<User %r>' % self.login
 
     @staticmethod
-    def get_or_create(login, git_id):
+    def get_or_create(login, nickname, email, avatar_url):
         user = User.query.filter_by(login=login).first()
         if user is None:
-            user = User(login, git_id)
+            user = User(login, nickname, email, avatar_url)
             db.session.add(user)
             db.session.commit()
         return user
+
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)

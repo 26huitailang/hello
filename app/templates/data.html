@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Github data:</h1>
+    <p>{{ user_json }}</p>
+    <hr>
+    <p>{{ user_json[0].files['requirements.txt'].raw_url }}</p>
+    <hr>
+    <script src="https://gist.github.com/26huitailang/6b93165ced5d60ee3d9ff8a74098a992.js"></script>
+    <script src="https://gist.github.com/26huitailang/114757e6a628a40710d151eb0674e7fd.js"></script>
+
+{% endblock %}

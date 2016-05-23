@@ -1,0 +1,1420 @@
+2016-05-18 16:20:08,407 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-18 16:23:53,144 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-18 16:24:14,796 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-18 17:06:15,476 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 54, in index
+    return render_template('login.html')
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 5, in block "content"
+    {{ form.hidden.tag() }}
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+2016-05-18 17:06:23,680 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 54, in index
+    return render_template('login.html')
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 5, in block "content"
+    {{ form.hidden.tag() }}
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+2016-05-18 17:07:40,012 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 54, in index
+    return render_template('login.html')
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 5, in block "content"
+    {{ form.hidden.tag() }}
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+2016-05-18 17:09:19,019 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 54, in index
+    'body': 'The Avengers movie was so cool!'
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 5, in block "content"
+    {{ form.hidden.tag() }}
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+2016-05-18 17:09:35,119 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 54, in index
+    'body': 'The Avengers movie was so cool!'
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 5, in block "content"
+    {{ form.hidden.tag() }}
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+2016-05-18 17:13:33,871 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 54, in index
+    'body': 'The Avengers movie was so cool!'
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 5, in block "content"
+    {{ form.hidden.tag() }}
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+2016-05-18 17:13:48,548 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 54, in index
+    'body': 'The Avengers movie was so cool!'
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 5, in block "content"
+    {{ form.hidden.tag() }}
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+2016-05-18 17:14:55,107 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 54, in index
+    'body': 'The Avengers movie was so cool!'
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 5, in block "content"
+    {{ form.hidden.tag() }}
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+2016-05-18 17:15:12,661 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 54, in index
+    'body': 'The Avengers movie was so cool!'
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 5, in block "content"
+    {{ form.hidden.tag() }}
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+2016-05-18 17:23:12,053 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 54, in index
+    'body': 'The Avengers movie was so cool!'
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 5, in block "content"
+    {{ form.hidden.tag() }}
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+2016-05-18 17:23:27,732 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 54, in index
+    'body': 'The Avengers movie was so cool!'
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 5, in block "content"
+    {{ form.hidden.tag() }}
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+2016-05-18 17:24:39,111 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 54, in index
+    'body': 'The Avengers movie was so cool!'
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 6, in block "content"
+    {{ form.hidden.tag() }}
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+2016-05-18 17:25:03,657 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 54, in index
+    'body': 'The Avengers movie was so cool!'
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 6, in block "content"
+    {{ form.hidden.tag() }}
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+2016-05-18 17:25:11,930 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 54, in index
+    'body': 'The Avengers movie was so cool!'
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 6, in block "content"
+    {{ form.hidden.tag() }}
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+2016-05-18 17:25:32,203 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 54, in index
+    'body': 'The Avengers movie was so cool!'
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 6, in block "content"
+    {{ form.hidden.tag() }}
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'form' is undefined
+2016-05-18 17:28:29,680 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-18 17:28:34,717 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 51, in index
+    posts=posts)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 6, in block "content"
+    {{ form.hidden.tag() }}
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'app.forms.PostForm object' has no attribute 'hidden'
+2016-05-18 17:56:23,658 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 51, in index
+    form=form,
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 25, in block "content"
+    {% include 'post.html' %}
+  File "D:\hello\app\templates\post.html", line 3, in top-level template code
+    <td><img src="{{ user.avatar_url }}" width="50" height="50"></td><td><i>{{ post.author.nickname }} says:</i><br>{{ post.body }}</td>
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'user' is undefined
+2016-05-18 17:56:41,240 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 51, in index
+    form=form,
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 25, in block "content"
+    {% include 'post.html' %}
+  File "D:\hello\app\templates\post.html", line 3, in top-level template code
+    <td><img src="{{ user.avatar_url }}" width="50" height="50"></td><td><i>{{ post.author.nickname }} says:</i><br>{{ post.body }}</td>
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'user' is undefined
+2016-05-18 17:59:47,181 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-18 18:00:23,051 ERROR: Exception on /index [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 52, in index
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 25, in block "content"
+    {% include 'post.html' %}
+  File "D:\hello\app\templates\post.html", line 3, in top-level template code
+    <td><img src="{{ user.avatar_url }}" width="50" height="50"></td><td><i>{{ post.author.nickname }} says:</i><br>{{ post.body }}</td>
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'user' is undefined
+2016-05-18 18:00:48,200 ERROR: Exception on /index/1 [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 52, in index
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 25, in block "content"
+    {% include 'post.html' %}
+  File "D:\hello\app\templates\post.html", line 3, in top-level template code
+    <td><img src="{{ user.avatar_url }}" width="50" height="50"></td><td><i>{{ post.author.nickname }} says:</i><br>{{ post.body }}</td>
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'user' is undefined
+2016-05-19 09:54:02,740 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-19 11:17:53,401 ERROR: Exception on /index [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 52, in index
+    flash('Your post is now live!')
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 29, in block "content"
+    <p>{{ user_json.login }}</p>
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'user_json' is undefined
+2016-05-19 11:29:33,243 ERROR: Exception on /index [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 52, in index
+    form=form,
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\base.html", line 32, in template
+    {% block content %}{% endblock %}
+TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2016-05-19 11:30:41,844 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 79, in user
+    flash('User %s not found.' % nickname)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 19, in top-level template code
+    | <a href="{{ url_for('data') }}">娴嬭瘯鏁版嵁</a>
+  File "C:\Python27\lib\site-packages\flask\helpers.py", line 312, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1641, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\helpers.py", line 305, in url_for
+    force_external=external)
+  File "C:\Python27\lib\site-packages\werkzeug\routing.py", line 1616, in build
+    raise BuildError(endpoint, values, method)
+BuildError: ('data', {}, None)
+2016-05-19 11:31:28,394 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 79, in user
+    flash('User %s not found.' % nickname)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 19, in top-level template code
+    | <a href="{{ url_for('data', user_json=user_json) }}">娴嬭瘯鏁版嵁</a>
+  File "C:\Python27\lib\site-packages\flask\helpers.py", line 312, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1641, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\helpers.py", line 305, in url_for
+    force_external=external)
+  File "C:\Python27\lib\site-packages\werkzeug\routing.py", line 1616, in build
+    raise BuildError(endpoint, values, method)
+BuildError: ('data', {'user_json': Undefined}, None)
+2016-05-19 11:32:26,667 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 79, in user
+    flash('User %s not found.' % nickname)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 19, in top-level template code
+    | <a href="{{ url_for('data', user_json=user_json) }}">娴嬭瘯鏁版嵁</a>
+  File "C:\Python27\lib\site-packages\flask\helpers.py", line 312, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1641, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\helpers.py", line 305, in url_for
+    force_external=external)
+  File "C:\Python27\lib\site-packages\werkzeug\routing.py", line 1616, in build
+    raise BuildError(endpoint, values, method)
+BuildError: ('data', {'user_json': Undefined}, None)
+2016-05-19 11:48:01,131 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-19 11:54:40,911 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-19 11:54:45,328 ERROR: Exception on /data [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1478, in full_dispatch_request
+    response = self.make_response(rv)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1566, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-05-19 11:55:01,213 ERROR: Exception on /data [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1478, in full_dispatch_request
+    response = self.make_response(rv)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1566, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-05-19 11:56:21,466 ERROR: Exception on /data [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1478, in full_dispatch_request
+    response = self.make_response(rv)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1566, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2016-05-19 11:56:53,579 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-19 12:00:54,648 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-19 12:03:25,964 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-19 12:18:41,428 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-19 13:55:11,233 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-19 13:56:48,924 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-19 13:59:26,161 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-19 14:01:14,586 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-19 14:20:44,828 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-19 14:24:44,964 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-19 14:27:41,003 ERROR: Exception on /data [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\app\views.py", line 72, in data
+    user_json=user_json)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\data.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\data.html", line 6, in block "content"
+    <p>{{ user_json.files.requirement.txt }}</p>
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'list object' has no attribute 'files'
+2016-05-19 14:38:02,266 ERROR: Exception on /data [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\app\views.py", line 72, in data
+    user_json=user_json)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\data.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\data.html", line 7, in block "content"
+    <p>{{ user_json[0].files.requirements.txt }}</p>
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'dict object' has no attribute 'requirements'
+2016-05-19 14:38:21,862 ERROR: Exception on /data [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\app\views.py", line 72, in data
+    user_json=user_json)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\data.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\data.html", line 7, in block "content"
+    <p>{{ user_json[0].files('requirements.txt') }}</p>
+AttributeError: 'dict' object has no attribute '__call__'
+2016-05-19 14:38:39,224 ERROR: Exception on /data [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\app\views.py", line 72, in data
+    user_json=user_json)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\data.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\data.html", line 7, in block "content"
+    <p>{{ user_json[0].files('requirements.txt') }}</p>
+AttributeError: 'dict' object has no attribute '__call__'
+2016-05-19 15:12:04,690 INFO: hello startup [in D:\hello\app\__init__.py:77]
+2016-05-19 16:12:32,361 INFO: hello startup [in D:\hello\app\__init__.py:79]
+2016-05-19 16:51:36,855 INFO: hello startup [in D:\hello\app\__init__.py:79]
+2016-05-19 17:00:15,677 INFO: hello startup [in D:\hello\app\__init__.py:79]
+2016-05-19 17:04:34,769 INFO: hello startup [in D:\hello\app\__init__.py:79]
+2016-05-19 17:46:09,572 ERROR: Exception on /index [GET] [in D:\hello\venv\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\hello\venv\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\venv\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 61, in index
+    posts=posts)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "D:\hello\venv\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "D:\hello\venv\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\base.html", line 40, in template
+    </div>
+TemplateSyntaxError: unexpected '/'
+2016-05-20 09:09:18,648 INFO: hello startup [in D:\hello\app\__init__.py:79]
+2016-05-20 09:44:49,796 INFO: hello startup [in D:\hello\app\__init__.py:79]
+2016-05-20 09:57:34,969 INFO: hello startup [in D:\hello\app\__init__.py:79]
+2016-05-20 10:35:19,559 ERROR: Exception on /github/callback [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\hello\app\views.py", line 143, in authorized
+    auth = github.get_auth_session(data=data)
+  File "C:\Python27\lib\site-packages\rauth\service.py", line 556, in get_auth_session
+    session = self.get_session(self.get_access_token(method, **kwargs))
+  File "C:\Python27\lib\site-packages\rauth\service.py", line 541, in get_access_token
+    r = self.get_raw_access_token(method, **kwargs)
+  File "C:\Python27\lib\site-packages\rauth\service.py", line 518, in get_raw_access_token
+    **kwargs)
+  File "C:\Python27\lib\site-packages\rauth\session.py", line 358, in request
+    return super(OAuth2Session, self).request(method, url, **req_kwargs)
+  File "C:\Python27\lib\site-packages\requests\sessions.py", line 475, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Python27\lib\site-packages\requests\sessions.py", line 585, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Python27\lib\site-packages\requests\adapters.py", line 453, in send
+    raise ConnectionError(err, request=request)
+ConnectionError: ('Connection aborted.', BadStatusLine("''",))
+2016-05-20 11:11:09,811 INFO: hello startup [in D:\hello\app\__init__.py:79]
+2016-05-20 11:25:47,388 ERROR: Exception on /index [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 61, in index
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "C:\Python27\lib\site-packages\jinja2\loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 554, in compile
+    self.handle_exception(exc_info, source_hint=source)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 30, in template
+    {% else %}
+TemplateSyntaxError: Encountered unknown tag 'else'. Jinja was looking for the following tags: 'endif'. The innermost block that needs to be closed is 'if'.
+2016-05-20 11:38:28,828 INFO: hello startup [in D:\hello\app\__init__.py:79]
+2016-05-20 15:34:08,160 INFO: hello startup [in D:\hello\app\__init__.py:79]
+2016-05-20 17:34:38,752 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 97, in user
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 54, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 11, in block "content"
+    {% if user.last_seen %}<p><em>鏈€鍚庝竴娆¤闂細{{ momentjs(user.last_seen).calendar() }}</em></p>{% endif %}
+UndefinedError: 'momentjs' is undefined
+2016-05-20 17:34:45,341 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 97, in user
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 54, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 11, in block "content"
+    {% if user.last_seen %}<p><em>鏈€鍚庝竴娆¤闂細{{ momentjs(user.last_seen).calendar() }}</em></p>{% endif %}
+UndefinedError: 'momentjs' is undefined
+2016-05-20 17:36:55,618 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 97, in user
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 54, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 11, in block "content"
+    {% if user.last_seen %}<p><em>鏈€鍚庝竴娆¤闂細{{ momentjs(user.last_seen).calendar() }}</em></p>{% endif %}
+UndefinedError: 'momentjs' is undefined
+2016-05-20 17:38:04,658 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 97, in user
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 54, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 11, in block "content"
+    {% if user.last_seen %}<p><em>鏈€鍚庝竴娆¤闂細{{ momentjs(user.last_seen).calendar() }}</em></p>{% endif %}
+UndefinedError: 'momentjs' is undefined
+2016-05-20 17:39:02,085 INFO: hello startup [in D:\hello\app\__init__.py:81]
+2016-05-23 09:32:34,493 INFO: hello startup [in D:\hello\app\__init__.py:81]
+2016-05-23 09:59:39,769 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 97, in user
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 54, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 18, in block "content"
+    {% include 'post.html' %}
+  File "D:\hello\app\templates\post.html", line 5, in top-level template code
+    <p><a href="{{ url_for('user', nickname=post.author.nickname) }}">{{ post.author.nickname }}</a> said on {{ momentjs(post.timestamp).fromNow() }}:</p>
+  File "D:\hello\app\momentjs.py", line 17, in fromNow
+    return self.render("fromNow()")
+  File "D:\hello\app\momentjs.py", line 8, in render
+    return Markup("<script>\ndocument.write(moment(\"%s\").%s);\n</script>" % (self.timestamp.strftime("%Y-%m-%dT%H:%M:%S Z"), format))
+UndefinedError: 'dict object' has no attribute 'timestamp'
+2016-05-23 10:16:51,032 INFO: hello startup [in D:\hello\app\__init__.py:83]
+2016-05-23 10:20:58,144 INFO: hello startup [in D:\hello\app\__init__.py:83]
+2016-05-23 10:26:39,535 INFO: hello startup [in D:\hello\app\__init__.py:99]
+2016-05-23 10:29:01,368 INFO: hello startup [in D:\hello\app\__init__.py:98]
+2016-05-23 10:34:40,921 INFO: hello startup [in D:\hello\app\__init__.py:98]
+2016-05-23 10:46:40,220 INFO: hello startup [in D:\hello\app\__init__.py:98]
+2016-05-23 10:47:46,841 INFO: hello startup [in D:\hello\app\__init__.py:98]
+2016-05-23 10:51:31,980 INFO: hello startup [in D:\hello\app\__init__.py:98]
+2016-05-23 10:55:55,992 INFO: hello startup [in D:\hello\app\__init__.py:98]
+2016-05-23 11:04:30,313 INFO: hello startup [in D:\hello\app\__init__.py:98]
+2016-05-23 11:05:28,418 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 96, in user
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 57, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 18, in block "content"
+    {% include 'post.html' %}
+  File "D:\hello\app\templates\post.html", line 5, in top-level template code
+    <p><a href="{{ url_for('user', nickname=post.author.nickname) }}">{{ post.author.nickname }}</a> said on {{ momentjs(post.timestamp).fromNow() }}:</p>
+  File "D:\hello\app\momentjs.py", line 17, in fromNow
+    return self.render("fromNow()")
+  File "D:\hello\app\momentjs.py", line 8, in render
+    return Markup("<script>\ndocument.write(moment(\"%s\").%s);\n</script>" % (self.timestamp.strftime("%Y-%m-%dT%H:%M:%S Z"), format))
+UndefinedError: 'dict object' has no attribute 'timestamp'
+2016-05-23 11:05:38,759 ERROR: Exception on /user/PrintNoMercy [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 96, in user
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 57, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\user.html", line 18, in block "content"
+    {% include 'post.html' %}
+  File "D:\hello\app\templates\post.html", line 5, in top-level template code
+    <p><a href="{{ url_for('user', nickname=post.author.nickname) }}">{{ post.author.nickname }}</a> said on {{ momentjs(post.timestamp).fromNow() }}:</p>
+  File "D:\hello\app\momentjs.py", line 17, in fromNow
+    return self.render("fromNow()")
+  File "D:\hello\app\momentjs.py", line 8, in render
+    return Markup("<script>\ndocument.write(moment(\"%s\").%s);\n</script>" % (self.timestamp.strftime("%Y-%m-%dT%H:%M:%S Z"), format))
+UndefinedError: 'dict object' has no attribute 'timestamp'
+2016-05-23 11:15:16,023 INFO: hello startup [in D:\hello\app\__init__.py:98]
+2016-05-23 11:16:00,549 INFO: hello startup [in D:\hello\app\__init__.py:98]
+2016-05-23 11:17:42,599 ERROR: Exception on /index [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 59, in index
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 55, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 26, in block "content"
+    {% include 'post.html' %}
+  File "D:\hello\app\templates\post.html", line 5, in top-level template code
+    <p><a href="{{ url_for('user', nickname=post.author.nickname) }}">{{ post.author.nickname }}</a> said on {{ moment(post.timestamp).fromNow() }}:</p>
+UndefinedError: 'moment' is undefined
+2016-05-23 11:17:51,196 ERROR: Exception on /index [GET] [in C:\Python27\lib\site-packages\flask\app.py:1423]
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python27\lib\site-packages\flask\app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Python27\lib\site-packages\flask_login.py", line 786, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\hello\app\views.py", line 59, in index
+    posts=posts)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 128, in render_template
+    context, ctx.app)
+  File "C:\Python27\lib\site-packages\flask\templating.py", line 110, in _render
+    rv = template.render(context)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Python27\lib\site-packages\jinja2\environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "D:\hello\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "D:\hello\app\templates\base.html", line 55, in top-level template code
+    {% block content %}{% endblock %}
+  File "D:\hello\app\templates\index.html", line 26, in block "content"
+    {% include 'post.html' %}
+  File "D:\hello\app\templates\post.html", line 5, in top-level template code
+    <p><a href="{{ url_for('user', nickname=post.author.nickname) }}">{{ post.author.nickname }}</a> said on {{ moment(post.timestamp).fromNow() }}:</p>
+UndefinedError: 'moment' is undefined
+2016-05-23 11:27:34,908 INFO: hello startup [in D:\hello\app\__init__.py:98]

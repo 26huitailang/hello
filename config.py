@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 WTF_CSRF_ENABLED = True
 SECRET_KEY = 'you-will-never-guess'
 # OAUTH_CREDENTIALS = {
@@ -51,3 +53,8 @@ DATABASE_QUERY_TIMEOUT = 0.5
 
 # pagination
 POSTS_PER_PAGE = 5
+
+LANGUAGES = {
+    'en': 'English',
+    'zh_Hans_CN': 'Chinese'
+}

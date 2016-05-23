@@ -6,9 +6,11 @@ import os
 from flask.ext.login import LoginManager
 from flask.ext.mail import Mail
 from flask.ext.openid import OpenID
+from flask.ext.babel import Babel
 from config import basedir, ADMINS, MAIL_SERVER, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD
 from rauth.service import OAuth2Service
 from .momentjs import momentjs
+from flask.json import JSONEncoder
 
 app = Flask(__name__)
 app.config.from_object('config')  # read config and use it
@@ -17,7 +19,7 @@ lm = LoginManager()
 lm.init_app(app)
 lm.login_view = 'login_page'
 mail = Mail(app)
-app.jinja_env.globals['momentjs'] = momentjs
+babel = Babel(app)
 # oid = OpenID(app, os.path.join(basedir, 'tmp'))
 
 # qq = oauth.remote_app('qq',
@@ -38,6 +40,21 @@ github = OAuth2Service(
     client_id= '79306c2506b9926d70a9',
     client_secret= 'e5e3ca1ab4106e1defad32f098aa7ccae931ae92',
 )
+
+
+class CustomJSONEncoder(JSONEncoder):
+    """This class adds support for lazy translation texts to Flask's
+    JSON encoder. This is necessary when flashing translated texts."""
+    def default(self, obj):
+        from speaklater import is_lazy_string
+        if is_lazy_string(obj):
+            try:
+                return unicode(obj)  # python 2
+            except NameError:
+                return str(obj)  # python 3
+        return super(CustomJSONEncoder, self).default(obj)
+
+app.json_encoder = CustomJSONEncoder
 
 # if not app.debug and os.environ.get('HEROKU') is None:
 #     import logging
@@ -80,5 +97,6 @@ if not app.debug:
     app.logger.setLevel(logging.INFO)
     app.logger.info('hello startup')
 
+app.jinja_env.globals['momentjs'] = momentjs
 
 from app import views, models

@@ -1,17 +1,12 @@
 from flask import Flask, flash, request, redirect, render_template, url_for, session, g
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import login_required, logout_user, current_user
-from app import app, github, lm, db
+from app import app, github, lm, db, babel
 from models import User, Post
-from config import ADMIN_ACCOUNT, POSTS_PER_PAGE
+from config import ADMIN_ACCOUNT, POSTS_PER_PAGE, LANGUAGES
 from datetime import datetime
 from forms import EditForm, PostForm
 from .emails import post_notification
-
-
-@lm.user_loader
-def load_user(id):
-    return User.query.get(int(id))
 
 
 @app.before_request
@@ -21,13 +16,16 @@ def before_request():
         g.user.last_seen = datetime.utcnow()
         db.session.add(g.user)
         db.session.commit()
-    if 'user_id' in session:
-        if session['user_id']:
-            user = User.query.get(session['user_id'])
-            if user:
-                g.user = user
-            else:
-                del session['user_id']
+
+
+@lm.user_loader
+def load_user(id):
+    return User.query.get(int(id))
+
+
+# @babel.localeselector
+# def get_locale():
+#     return "en"  # request.accept_languages.best_match(LANGUAGES.keys())
 
 
 @app.errorhandler(404)

@@ -32,7 +32,7 @@ babel = Babel(app)
 #                       request_token_params={'scope': 'get_user_info'}
 # )
 
-#  remote version
+
 github = OAuth2Service(
     name='github',
     base_url='https://api.github.com/',

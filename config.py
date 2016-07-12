@@ -28,7 +28,7 @@ MAIL_PORT = 465
 # MAIL_USE_TLS = True
 MAIL_USE_SSL = True
 MAIL_USERNAME = '50590960'
-MAIL_PASSWORD = 'gsuzrbmkxhvybiac' # qq: gsuzrbmkxhvybiac csj123456
+MAIL_PASSWORD = '' # qq:
 
 #administrator list
 ADMINS = ['50590960@qq.com', 'chensijian199182@163.com', '26huitailang@gmail.com']

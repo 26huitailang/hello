@@ -1770,3 +1770,6 @@ Traceback (most recent call last):
   File "D:\hello\app\templates\user.html", line 17, in block "content"
     {% for post in posts %}
 TypeError: 'Pagination' object is not iterable
+2016-08-24 10:47:30,118 INFO: hello startup [in D:\hello\app\__init__.py:103]
+2016-08-24 11:00:45,709 INFO: hello startup [in D:\hello\app\__init__.py:103]
+2016-09-01 14:22:59,134 INFO: hello startup [in D:\hello\app\__init__.py:109]

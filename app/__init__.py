@@ -13,10 +13,14 @@ from .momentjs import momentjs
 from flask.json import JSONEncoder
 
 app = Flask(__name__)
-app.config.from_object('config')  # read config and use it
+# read config and use it
+app.config.from_object('config', instance_relative_config=True)
+# load instance/config.py some local secret instance here
+app.config.from_pyfile('config.py')
 db = SQLAlchemy(app)
 lm = LoginManager()
 lm.init_app(app)
+# The name of the view to redirect to when the user needs to log in.
 lm.login_view = 'login_page'
 mail = Mail(app)
 babel = Babel(app)
@@ -39,11 +43,11 @@ github = OAuth2Service(
     access_token_url='https://github.com/login/oauth/access_token',
     authorize_url='https://github.com/login/oauth/authorize',
     #  local
-    # client_id= '79306c2506b9926d70a9',
-    # client_secret= 'e5e3ca1ab4106e1defad32f098aa7ccae931ae92',
+    # client_id=app.config['LOCAL_CLIENT_ID'],
+    # client_secret=app.config['LOCAL_CLIENT_SECRET'],
     #  remote
-    client_id= '16c41d749ab3650a6e7a',
-    client_secret= '79d32845dd7cfa21597d5ecacd72f9aa25bd0f65'
+    client_id=app.config['REMOTE_CLIENT_ID'],
+    client_secret=app.config['REMOTE_CLIENT_SECRET']
 )
 
 

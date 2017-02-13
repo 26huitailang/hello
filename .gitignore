@@ -1,7 +1,8 @@
 *.pyc
 *.pyo
-app.db
-search.db
-venv
+*.db
+venv/
 *.mo
 tmp
+.idea/
+instance/
